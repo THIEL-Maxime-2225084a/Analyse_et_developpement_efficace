@@ -1,79 +1,38 @@
 package listeSimple;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
-
-class ListeSimpleStringTest {
-
-	@Test
-	void testListeSimpleString() {
-		fail("Not yet implemented");
+public class ListeSimpleString {
+	private NodeString head;
+	
+	public ListeSimpleString() {
+		
 	}
-
-	@Test
-	void testListeSimpleStringNodeString() {
-		fail("Not yet implemented");
+	
+	public ListeSimpleString(NodeString head) {
+		this.head = new NodeString(element, null);
 	}
-
-	@Test
-	void testObject() {
-		fail("Not yet implemented");
+	
+	public void insererElementEnTete(String elem) {
+		NodeString newNode = new NodeString(elem, head);
+		head = newNode;
+		size++;
 	}
-
-	@Test
-	void testGetClass() {
-		fail("Not yet implemented");
+	
+	public String getElementTete() {
+		return head.getElement();
 	}
-
-	@Test
-	void testHashCode() {
-		fail("Not yet implemented");
+	
+	public String getAvantDernierElement() {
+		NodeString courant = head;
+		//si le noeud de tête n'a pas de suivant alors la liste ne contient
+		//qu'un seule élément. Il n'y a pas d'avant-dernier possible puisque le
+		//premier est le même que le dernier
+		if (courant.getNext() == null) {
+			return null;
+		}
+		while(courant.getNext()!=null) {
+			courant = courant.getNext();
+		}
 	}
-
-	@Test
-	void testEquals() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testClone() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testToString() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testNotify() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testNotifyAll() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testWait() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testWaitLong() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testWaitLongInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testFinalize() {
-		fail("Not yet implemented");
-	}
-
+	
+	
 }
